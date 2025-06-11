@@ -3,12 +3,15 @@ from .serializers import *
 from django.shortcuts import render
 from datetime import date
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import viewsets, permissions,status
 from rest_framework_simplejwt.tokens import RefreshToken
 
+@csrf_exempt
 def register_page(request):
     return render(request, "reg_login.html")
 
+@csrf_exempt
 def index_page(request):
     return render(request, 'index.html')
 
