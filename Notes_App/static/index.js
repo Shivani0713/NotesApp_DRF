@@ -2,7 +2,7 @@ let isEditing = false;
 let editingNoteId = null;
 
 // Get Notes
-async function getNotes(url = "http://127.0.0.1:8000/api/notes/?page=1") {
+async function getNotes(url = "https://notesapp-drf.onrender.com/api/notes/?page=1") {
     const token = localStorage.getItem("access");
     const username_data = localStorage.getItem("username")
     const fill_username = document.getElementById("username")
@@ -143,7 +143,7 @@ document.getElementById("note_form").addEventListener("submit", async function (
     formData.append("description", description);
     if (file) formData.append("image_path", file);
 
-    let url = "http://127.0.0.1:8000/api/notes/";
+    let url = "https://notesapp-drf.onrender.com/api/notes/";
     let method = "POST";
 
     if (isEditing && editingNoteId) {
@@ -187,7 +187,7 @@ document.getElementById("note_form").addEventListener("submit", async function (
 async function deleteNote(id) {
     const token = localStorage.getItem("access");
 
-    const res = await fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
+    const res = await fetch(`https://notesapp-drf.onrender.com/api/notes/${id}/`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`
