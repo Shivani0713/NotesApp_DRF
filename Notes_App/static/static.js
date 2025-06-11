@@ -29,7 +29,7 @@ document.getElementById("signup-form")?.addEventListener("submit", async functio
     }
 
     try {
-        const res = await fetch("http://127.0.0.1:8000/api/register/", {
+        const res = await fetch("https://notesapp-drf.onrender.com/api/register/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
@@ -55,7 +55,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
     const password = document.getElementById("password").value;
 
     try {
-        const res = await fetch("http://127.0.0.1:8000/api/token/", {
+        const res = await fetch("https://notesapp-drf.onrender.com/api/token/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
