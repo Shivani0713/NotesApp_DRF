@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+                         initial-scale=1.0">
+    <title>Notes App</title>
+    {% load static %}
+    {% load static %}
+    <link href="{% static 'static.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+        <div class="form-section">
+            <form class="login-box" id="login-form">
+                <input type="text" class="email ele" id="username" placeholder="yourusername" autocomplete="username">
+                <input type="password" id="password" class="password ele" placeholder="password" autocomplete="password">
+                <button class="clkbtn">Login</button>
+            </form>
+            <!-- <div class="signup-box"> -->
+            <form class="signup-box" id="signup-form">
+                <input type="text" class="name ele" id="signup-username" placeholder="Enter your name" autocomplete="signup-username">
+                <input type="email" id="signup-email" class="email ele" placeholder="youremail@email.com" autocomplete="signup-email">
+                <input type="password" id="signup-password" class="password ele" placeholder="password" autocomplete="signup-password">
+                <input type="password" id="signup-confirm" class="password ele" placeholder="Confirm password" autocomplete="signup=confirm">
+                <button class="clkbtn">Signup</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'static.js' %}"></script>
+</body>
+
+</html>
