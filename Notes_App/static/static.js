@@ -29,7 +29,7 @@ document.getElementById("signup-form")?.addEventListener("submit", async functio
     }
 
     try {
-        const res = await fetch("https://notesapp-drf.onrender.com/register/", {
+        const res = await fetch("https://notesapp-drf.onrender.com/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
@@ -39,7 +39,7 @@ document.getElementById("signup-form")?.addEventListener("submit", async functio
         if (data.access) {
             localStorage.setItem("access", data.access);
             alert("Registered successfully!");
-            window.location.href = "/register/";
+            window.location.href = "/register";
         } else {
             alert("Signup failed: " + JSON.stringify(data));
         }
@@ -55,7 +55,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
     const password = document.getElementById("password").value;
 
     try {
-        const res = await fetch("https://notesapp-drf.onrender.com/token/", {
+        const res = await fetch("https://notesapp-drf.onrender.com/token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
@@ -67,7 +67,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
             localStorage.setItem("access", data.access);
             localStorage.setItem("refresh", data.refresh);
             alert("Login successful!");
-            window.location.href = "/index/";
+            window.location.href = "/index";
         } else {
             alert("Login failed: " + JSON.stringify(data));
         }
@@ -77,7 +77,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
 });
 
 // Load Notes on /index/
-if (window.location.pathname === "/index/") {
+if (window.location.pathname === "/index") {
     getNotes();
 }
 })();
